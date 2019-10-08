@@ -9,5 +9,5 @@ class Entry(db.Model):
 
     def __repr__(self):
         return '<Entry id={id} title={title!r}>'.format(
-            id=self.id, title=self.title
+            id=self.id, title=self.title   
         )
