@@ -16,4 +16,10 @@ def create_app():
     except OSError:
         pass
 
-    
+# Test case
+
+@app.route('/hello')
+def hello():
+    return 'Hello, World!'
+
+return app
