@@ -1,9 +1,20 @@
-# OS etc
+# OS
 .DS_Store
-.idea/
+thumbs.db
+__MACOSX
+._*
 
-# Modules
-/coverage/
-/vendor/
-/logs/*
-!/logs/README.md
+# Server
+error_log
+.htaccess
+
+# Concrete5
+cache/
+config/
+files/
+*.swp
+*.swo
+updates/
+
+# ignore sitemap.xml
+sitemap.xml
