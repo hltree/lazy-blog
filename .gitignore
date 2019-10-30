@@ -1,20 +1,15 @@
 # OS
+.idea/
 .DS_Store
 thumbs.db
 __MACOSX
 ._*
 
-# Server
-error_log
-.htaccess
+/coverage/
+/vendor/
+/logs/*
+!/logs/README.md
+/var/cache/*
 
-# Concrete5
-cache/
-config/
-files/
-*.swp
-*.swo
-updates/
+cache
 
-# ignore sitemap.xml
-sitemap.xml
