@@ -1,4 +1,5 @@
 <?php
+
 use DI\Container;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
@@ -9,8 +10,10 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $container = new Container();
 
+require __DIR__ . '/../app/dependencies.php';
+
 AppFactory::setContainer($container);
-$container->set('view', function() {
+$container->set('view', function () {
     return new Twig('./templates'/*, ['cache' => './cache']*/);
 });
 
