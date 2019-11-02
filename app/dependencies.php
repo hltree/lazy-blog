@@ -6,9 +6,6 @@ $container->set('db', function () {
 });
 
 $get_db = $container->get('db');
-echo $get_db;
-//var_dump();
-/*
 $container['db'] = function ($c) {
     $settings = $c->get('settings')['db'];
     $pdo = new PDO("mysql:host=" . $settings['host'] . ";dbname=" . $settings['dbname'] . ";port=" . $settings['port'],
@@ -17,4 +14,3 @@ $container['db'] = function ($c) {
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $pdo;
 };
-*/
