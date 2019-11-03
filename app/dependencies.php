@@ -1,9 +1,8 @@
 <?php
 
-use Setting;
+use App\Setting\Settings;
 
-$settings = new Setting\Settings();
-var_dump($settings);
+$settings = new Settings();
 $container->set('db', function () {
     $settings = $settings['db'];
     $pdo = new PDO("mysql:host=" . $settings['host'] . ";dbname=" . $settings['dbname'] . ";port=" . $settings['port'],

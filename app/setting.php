@@ -1,6 +1,6 @@
 <?php
 
-namespace Setting;
+namespace App\Setting;
 
 class Settings
 {
