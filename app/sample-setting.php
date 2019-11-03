@@ -1,4 +1,5 @@
 <?php
+// this is sample.
 
 namespace App\Setting;
 

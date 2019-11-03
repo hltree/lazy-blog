@@ -13,3 +13,6 @@ __MACOSX
 
 cache
 
+# config
+setting.php
+
