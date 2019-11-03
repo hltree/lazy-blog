@@ -3,14 +3,17 @@
 use App\Setting;
 
 $settings = new Setting\Settings();
-$container->set('db', function () {
-    $settings = $settings['db'];
-    $pdo = new PDO("mysql:host=" . $settings['host'] . ";dbname=" . $settings['dbname'] . ";port=" . $settings['port'],
-        $settings['user'], $settings['password']);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    return $pdo;
+$container->set('db', function ($settings) {
+    $db = $settings->db;
+    $dsn = "mysql:host={$db['user']}@{$db['host']};port={$db['port']};dbname={$db['dbname']}";
+    try {
+        $pdo = new PDO($dsn, $db['password']);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $pdo;
+    }
+    catch(PDOException $e) {
+        echo 'Connection failed: ' . $e->getMessage();
+    }
 });
 
-//$db = $container->get('db');
-//var_dump($db);
+$db = $container->get('db');

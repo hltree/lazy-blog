@@ -5,16 +5,16 @@ namespace App\Setting;
 
 class Settings
 {
-    private $settings;
+    protected $db;
 
     public function __construct()
     {
-        $this->returnSettings();
+        $this->SetDatabase();
     }
 
-    public function returnSettings()
+    public function SetDataBase()
     {
-        $settings = $this->settings = [
+        $this->db = [
             'db' => [
                 'host' => 'localhost',
                 'user' => 'root',
@@ -24,6 +24,6 @@ class Settings
             ]
         ];
 
-        return $settings;
+        return $this->db;
     }
 }
