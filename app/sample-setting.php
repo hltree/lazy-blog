@@ -5,7 +5,7 @@ namespace App\Setting;
 
 class Settings
 {
-    protected $db;
+    public $db;
 
     public function __construct()
     {
@@ -16,10 +16,10 @@ class Settings
     {
         $this->db = [
             'db' => [
-                'host' => 'localhost',
+                'host' => '127.0.0.1',
                 'user' => 'root',
                 'password' => 'root',
-                'port' => 3306,
+                'port' => '3306',
                 'dbname' => 'mysite',
             ]
         ];
