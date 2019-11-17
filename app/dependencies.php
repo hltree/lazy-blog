@@ -2,8 +2,8 @@
 
 use App\Setting;
 
-$settings = new Setting\Settings();
-$db = $settings->db['db'];
+$container->settings = new Setting\Settings();
+$db = $container->settings->db;
 $dsn = "mysql:host={$db['host']};port={$db['port']};dbname={$db['dbname']};charset=utf8;";
 try {
     $pdo = new PDO($dsn, $db['user'], $db['password']);

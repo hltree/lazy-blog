@@ -16,16 +16,24 @@ $app->get('/', function ($request, $response) {
     return $this->get('view')->render($response, 'index.html');
 })->setName('index');
 
+$user = $container->settings->user;
+$app->post('/login', function($request, $response, $user) {
+    $_SESSION['login'] = true;
+    ['username' => $username, 'password' => $password] = $request->getParsedBody();
+    return $this->get('view')->render($response, 'admin.twig', [
+        'username' => $username,
+        'password' => $password,
+        'user' => $user
+    ]);
+});
 
-$app->get('/login', function ($request, $response, $args) {
+$app->get('/login', function ($request, $response) {
+    session_start();
     $session = $_SESSION['login'];
     $session = $session ? htmlspecialchars($session) : false;
     if ($session === true) {
-        return $this->get('view')->render($response, 'admin.html');
+        return $this->get('view')->render($response, 'admin.twig');
     } else {
-        return $this->get('view')->render($response, 'login.twig', [
-            'user' => $args['user'],
-            'pass' => $args['pass']
-        ]);
+        return $this->get('view')->render($response, 'login.twig');
     }
 })->setName('login');

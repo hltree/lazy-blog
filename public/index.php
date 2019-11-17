@@ -14,7 +14,7 @@ require __DIR__ . '/../app/dependencies.php';
 
 AppFactory::setContainer($container);
 $container->set('view', function () {
-    return new Twig('./templates'/*, ['cache' => './cache']*/);
+    return new Twig('./templates', ['debug' => true/*, 'cache' => './cache'*/]);
 });
 
 $app = AppFactory::create();
