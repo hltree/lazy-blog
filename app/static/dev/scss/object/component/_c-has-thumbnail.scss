@@ -1,0 +1,57 @@
+.c-has-thumbnail {
+    &-item {
+        background-color: $gray;
+        color: $black_thin;
+        display: block;
+        padding: 10px;
+        width: 32%;
+        &s {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &:after {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 32%;
+            }
+        }
+        &-img {
+            img {
+                display: block;
+                height: auto;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        &-title {
+            margin-top: 10px;
+            @include fz(14);
+        }
+        &-date {
+            margin-top: 10px;
+            @include fz(12);
+        }
+    }
+}
+
+@include breakpoint(sp) {
+    .c-has-thumbnail {
+        &-item {
+            width: 48%;
+            &s {
+                &:after {
+                    content: none;
+                }
+            }
+            &-img {
+            }
+            &-title {
+
+            }
+            &-date {
+
+            }
+        }
+    }
+}

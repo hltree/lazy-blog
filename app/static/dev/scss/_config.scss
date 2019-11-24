@@ -1,14 +1,17 @@
 $breakpoints: (
+	sp: 500px
 );
 
-$default_color: #333;
+$default_color: #fff;
+$black_thin: #333;
+$gray: #ccc;
 
 @mixin breakpoint($size) {
 	$flg: false;
 	@each $breakpoint, $value in $breakpoints {
 		@if $size == $breakpoint {
 			$flg: true;
-			@media only screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			@media only screen and (max-width: map-get($breakpoints, $breakpoint)) {
 				@content;
 			}
 		}

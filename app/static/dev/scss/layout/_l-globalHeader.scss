@@ -1,0 +1,14 @@
+.l-globalHeader {
+    background-color: $default_color;
+    display: block;
+    padding: 20px;
+    &-inner {
+
+    }
+    &Title {
+        @include fz(24);
+        a {
+            color: #333;
+        }
+    }
+}
