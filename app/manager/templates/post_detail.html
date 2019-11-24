@@ -20,15 +20,12 @@
     <main class="l-area">
         <section class="l-area-inner">
             <div class="c-has-thumbnail-items">
-                {% for post in posts %}
-                <article class="c-has-thumbnail-item">
-                    <a href="{% url 'post_detail' post.id %}">
-                        <span class="c-has-thumbnail-item-img"><img src='{{post.image.url}}'></span>
-                        <span class="c-has-thumbnail-item-title">{{post.title}}</span>
-                        <span class="c-has-thumbnail-item-date">{{post.published}}</span>
-                    </a>
+                <article class="p-post-content">
+                    <p class="p-post-content-img"><img src='{{post.image.url}}'></p>
+                    <p class="p-post-content-title">{{post.title}}</p>
+                    <p class="p-post-content-date">{{post.published}}</p>
+                    <p class="p-post-content-text">{{post.content}}</p>
                 </article>
-                {% endfor %}
             </div>
         </section>
     </main>

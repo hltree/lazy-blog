@@ -21,7 +21,8 @@ import manager.views as manager_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', manager_view.index.as_view()),
+    path('', manager_view.index.as_view(), name='index'),
+    path('post/<post_id>', manager_view.post_detail.as_view(), name='post_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
