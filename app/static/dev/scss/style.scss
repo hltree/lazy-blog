@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@import "./_config.scss";
+
+@import "./foundation/_f-reset.scss";
+@import "./foundation/_f-override.scss";
+
+@import "./layout/_layout.scss";
+@import "./object/component/_component.scss";
+@import "./object/project/_project.scss";

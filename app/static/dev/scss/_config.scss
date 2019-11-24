@@ -1,0 +1,35 @@
+$breakpoints: (
+);
+
+$default_color: #333;
+
+@mixin breakpoint($size) {
+	$flg: false;
+	@each $breakpoint, $value in $breakpoints {
+		@if $size == $breakpoint {
+			$flg: true;
+			@media only screen and (min-width: map-get($breakpoints, $breakpoint)) {
+				@content;
+			}
+		}
+	}
+	@if $flg == false {
+		@media only screen and ($size) {
+			@content;
+		}
+	}
+}
+
+@include breakpoint(sp) {
+	* {
+		box-sizing: border-box !important;
+		float: none !important;
+		max-width: 100%;
+	}
+}
+
+@mixin fz($size) {
+	// font-size: $size + px;
+	$base: 16;
+	font-size: ($size / $base) + rem;
+}
