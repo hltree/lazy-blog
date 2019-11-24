@@ -6,29 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Worker List</title>
+    {% load static %}
+    <link rel="stylesheet" href="uploads/{% static 'style.css' %}">
+    <title>Index</title>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th>タイトル</th>
-        <th>投稿日</th>
-        <th>アイキャッチ</th>
-        <th>内容</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for post in posts %}
-    <tr>
-        <td>{{post.title}}</td>
-        <td>{{post.published}}</td>
-        <td><img src='{{post.image.url}}'></td>
-        <td>{{post.content}}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<div class="l-wrap">
+    <main class="l-area">
+        <section class="l-area-inner">
+            <div class="c-has-thumbnail-items">
+                {% for post in posts %}
+                <article class="c-has-thumbnail-item">
+                    <div class="c-has-thumbnail-item-img"><img src='{{post.image.url}}'></div>
+                    <div class="c-has-thumbnail-item-title">{{post.title}}</div>
+                    <div class="c-has-thumbnail-item-date">{{post.published}}</div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</div>
 </body>
 </html>
