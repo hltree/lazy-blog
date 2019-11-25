@@ -3,7 +3,6 @@
         background-color: $gray;
         color: $black_thin;
         display: block;
-        padding: 10px;
         width: 32%;
         &s {
             display: flex;
@@ -16,7 +15,33 @@
                 width: 32%;
             }
         }
+        &-inner {
+            color: inherit;
+            display: block;
+            padding: 10px;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            &:before {
+                background-color: #fff;
+                content: '';
+                display: block;
+                height: 100%;
+                left: -100%;
+                position: absolute;
+                top: 0;
+                transition: left .4s;
+                width: 100%;
+            }
+            &:hover {
+                &:before {
+                    left: 0;
+                }
+            }
+        }
         &-img {
+            display: block;
+            position: relative;
             img {
                 display: block;
                 height: auto;
@@ -25,11 +50,15 @@
             }
         }
         &-title {
-            margin-top: 10px;
+            display: block;
+            margin-top: 5px;
+            position: relative;
             @include fz(14);
         }
         &-date {
-            margin-top: 10px;
+            display: block;
+            margin-top: 5px;
+            position: relative;
             @include fz(12);
         }
     }

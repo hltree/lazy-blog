@@ -25,7 +25,7 @@ SECRET_KEY = '$x2nfxi8w^2mwb_awq4@0ed=aqk2eo6s^*7ay#$h6dtd3swh2i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -145,4 +145,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/uploads/'
-MEDIA_ROOT = BASE_DIR
