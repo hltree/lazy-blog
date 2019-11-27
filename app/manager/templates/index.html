@@ -23,7 +23,13 @@
                 {% for post in posts %}
                 <article class="c-has-thumbnail-item">
                     <a href="{% url 'post_detail' post.id %}" class="c-has-thumbnail-item-inner">
-                        <span class="c-has-thumbnail-item-img"><img src='/{{post.image}}'></span>
+                        <span class="c-has-thumbnail-item-img">
+                            {% if post.image %}
+                                <img src='/{{post.image}}'>
+                            {% else %}
+                                <img src="{% static 'images/avatar.jpg' %}">
+                            {% endif %}
+                        </span>
                         <span class="c-has-thumbnail-item-title">{{post.title}}</span>
                         <span class="c-has-thumbnail-item-date">{{post.published}}</span>
                     </a>

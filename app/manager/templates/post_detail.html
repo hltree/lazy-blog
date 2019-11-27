@@ -21,10 +21,12 @@
         <section class="l-area-inner">
             <div class="c-has-thumbnail-items">
                 <article class="p-post-content">
-                    <p class="p-post-content-img"><img src='/{{post.image}}'></p>
+                    {% if post.image %}
+                        <p class="p-post-content-img"><img src='/{{post.image}}'></p>
+                    {% endif %}
                     <p class="p-post-content-title">{{post.title}}</p>
                     <p class="p-post-content-date">{{post.published}}</p>
-                    <p class="p-post-content-text">{{post.content}}</p>
+                    <p class="p-post-content-text">{{post.content |safe}}</p>
                 </article>
             </div>
         </section>
