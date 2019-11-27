@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This site is hltree the blog.">
+    <meta name="author" content="hltree">
+    {% load static %}
+    <link rel="icon" href="{% static 'build/images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'build/css/style.css' %}">
+    <title>hltree</title>
+</head>
+<body>
+<div class="l-wrap">
+    {% block header %}
+        <header class="l-globalHeader">
+            <div class="l-globalHeader-inner">
+                <h1 class="l-globalHeaderTitle"><a href="/">hltree.tech</a></h1>
+            </div>
+        </header>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+    {% block footer %}
+        <footer class="l-globalFooter">
+            <div class="l-globalFooter-inner">
+
+            </div>
+        </footer>
+    {% endblock %}
+</div>
+</body>
+</html>

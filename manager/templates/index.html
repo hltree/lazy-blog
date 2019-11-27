@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang='ja'>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'build/css/style.css' %}">
-    <title>Index</title>
-</head>
-<body>
-<div class="l-wrap">
-    <header class="l-globalHeader">
-        <div class="l-globalHeader-inner">
-            <h1 class="l-globalHeaderTitle"><a href="/">hltree.tech</a></h1>
-        </div>
-    </header>
+{% extends 'base.html' %}
+{% block content %}
     <main class="l-area">
         <section class="l-area-inner">
             <div class="c-has-thumbnail-items">
@@ -27,6 +10,7 @@
                             {% if post.image %}
                                 <img src='/{{post.image}}'>
                             {% else %}
+                            {% load static %}
                                 <img src="{% static 'images/avatar.jpg' %}">
                             {% endif %}
                         </span>
@@ -38,11 +22,4 @@
             </div>
         </section>
     </main>
-    <footer class="l-globalFooter">
-        <div class="l-globalFooter-inner">
-
-        </div>
-    </footer>
-</div>
-</body>
-</html>
+{% endblock %}
