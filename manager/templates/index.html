@@ -10,8 +10,7 @@
                             {% if post.image %}
                                 <img src='/{{post.image}}'>
                             {% else %}
-                            {% load static %}
-                                <img src="{% static 'images/avatar.jpg' %}">
+                                <span class="c-flower"></span>
                             {% endif %}
                         </span>
                         <span class="c-has-thumbnail-item-title">{{post.title}}</span>
