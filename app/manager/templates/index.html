@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     {% load static %}
-    <link rel="stylesheet" href="uploads{% static 'build/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'build/css/style.css' %}">
     <title>Index</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
                 {% for post in posts %}
                 <article class="c-has-thumbnail-item">
                     <a href="{% url 'post_detail' post.id %}" class="c-has-thumbnail-item-inner">
-                        <span class="c-has-thumbnail-item-img"><img src='{{post.image.url}}'></span>
+                        <span class="c-has-thumbnail-item-img"><img src='/{{post.image}}'></span>
                         <span class="c-has-thumbnail-item-title">{{post.title}}</span>
                         <span class="c-has-thumbnail-item-date">{{post.published}}</span>
                     </a>

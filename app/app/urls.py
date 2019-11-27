@@ -25,7 +25,7 @@ urlpatterns = [
     path('post/<post_id>', manager_view.post_detail.as_view(), name='post_detail'),
 ]
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.BASE_DIR)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
