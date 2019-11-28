@@ -18,10 +18,12 @@
         &-inner {
             color: inherit;
             display: block;
+            height: 100%;
             padding: 10px;
             overflow: hidden;
             position: relative;
             text-decoration: none;
+            width: 100%;
             &:before {
                 background-color: #fff;
                 content: '';
