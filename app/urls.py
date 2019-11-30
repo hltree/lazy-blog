@@ -22,6 +22,7 @@ import manager.views as manager_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', manager_view.index.as_view(), name='index'),
+    path('about', manager_view.about.as_view(), name='about'),
     path('post/<post_id>', manager_view.post_detail.as_view(), name='post_detail'),
 ]
 if settings.DEBUG:

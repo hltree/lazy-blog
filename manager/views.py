@@ -20,3 +20,9 @@ class post_detail(TemplateView):
         post = get_object_or_404(Post, pk=post_id)
 
         return render(self.request, self.template_name, {'post': post})
+
+class about(TemplateView):
+    template_name = 'about.html'
+
+    def get(self, request):
+        return render(self.request, self.template_name)
