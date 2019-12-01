@@ -1,0 +1,12 @@
+.p-about {
+    &-title {
+        a {
+            color: $default_color;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &-text {
+    }
+}

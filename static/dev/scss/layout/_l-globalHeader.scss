@@ -5,10 +5,25 @@
     &-inner {
 
     }
+    &List {
+        &Item {
+            a {
+                color: $black_thin;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &Nav {
+    }
     &Title {
         @include fz(24);
         a {
             color: #333;
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
