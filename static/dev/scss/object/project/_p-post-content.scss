@@ -4,12 +4,22 @@
         background: $slate_gray;
         margin-top: 60px;
         padding: 20px;
+        @include fz(14);
+
+        * {
+            margin-top: 10px;
+        }
+        pre {
+            background: $navy;
+            padding: 20px;
+            overflow-x: scroll;
+        }
     }
     &-date {
         margin-top: 10px;
         @include fz(14);
     }
     &-title {
-        @include fz(24);
+        @include fz(20);
     }
 }
