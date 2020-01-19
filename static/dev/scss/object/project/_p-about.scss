@@ -2,10 +2,14 @@
     &-title {
         a {
             color: $default_color;
-            &:hover {
+            @include hover_action(map_get($breakpoints, 'tb')) {
                 text-decoration: none;
             }
         }
+    }
+    &-subtitle {
+        margin-bottom: 20px;
+        margin-top: 40px;
     }
     &-text {
     }

@@ -1,4 +1,5 @@
 $breakpoints: (
+	tb: 768px,
 	sp: 500px
 );
 
@@ -39,4 +40,20 @@ $slate_gray: #626063;
 	// font-size: $size + px;
 	$base: 16;
 	font-size: ($size / $base) + rem;
+}
+
+@mixin hover_action($size: false) {
+	transition: all .6s;
+	@if $size != false {
+		@media only screen and (min-width: $size + 1) {
+			&:hover {
+				@content;
+			}
+		}
+	}
+	@else {
+		&:hover {
+			@content;
+		}
+	}
 }

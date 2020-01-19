@@ -17,7 +17,6 @@
             }
         }
         &-inner {
-            color: inherit;
             display: block;
             height: 100%;
             padding: 10px;
@@ -36,7 +35,7 @@
                 transition: left .4s;
                 width: 100%;
             }
-            &:hover {
+            @include hover_action(map_get($breakpoints, 'tb')) {
                 &:before {
                     left: 0;
                 }
@@ -59,12 +58,14 @@
             }
         }
         &-title {
+            color: $black_thin;
             display: block;
             margin-top: 5px;
             position: relative;
             @include fz(14);
         }
         &-date {
+            color: $black_thin;
             display: block;
             margin-top: 5px;
             position: relative;

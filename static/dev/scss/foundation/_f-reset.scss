@@ -33,3 +33,10 @@ body {
 * {
     box-sizing: border-box;
 }
+
+a {
+   color: $default_color;
+    &:hover, &:visited {
+        color: $default_color;
+    }
+}
