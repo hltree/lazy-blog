@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_markdownx %}
 {% block content %}
     <main class="l-area">
         <section class="l-area-inner">
@@ -9,7 +10,7 @@
                     {% endif %}
                     <p class="p-post-content-title">{{post.title}}</p>
                     <p class="p-post-content-date">{{post.published}}</p>
-                    <p class="p-post-content-text">{{post.content |safe}}</p>
+                    <p class="p-post-content-text">{{post.content | markdown_to_html}}</p>
                 </article>
             </div>
         </section>

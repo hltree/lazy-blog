@@ -24,6 +24,7 @@ urlpatterns = [
     path('', manager_view.index.as_view(), name='index'),
     path('about', manager_view.about.as_view(), name='about'),
     path('post/<post_id>', manager_view.post_detail.as_view(), name='post_detail'),
+    path('markdownx/', include('markdownx.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
