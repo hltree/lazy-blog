@@ -74,6 +74,10 @@ TEMPLATES = [
 ]
 WSGI_APPLICATION = 'app.wsgi.application'
 
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.toc',
+]
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
