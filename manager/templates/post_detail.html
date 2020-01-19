@@ -8,9 +8,11 @@
                     {% if post.image %}
                         <p class="p-post-content-img"><img src='/{{post.image}}'></p>
                     {% endif %}
-                    <p class="p-post-content-title">{{post.title}}</p>
+                    <h2 class="p-post-content-title">{{post.title}}</h2>
                     <p class="p-post-content-date">{{post.published}}</p>
-                    <p class="p-post-content-text">{{post.content | markdown_to_html}}</p>
+                    <div class="p-post-content-area">
+                        {{post.content | markdown_to_html}}
+                    </div>
                 </article>
             </div>
         </section>

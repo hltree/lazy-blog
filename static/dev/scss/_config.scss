@@ -3,8 +3,11 @@ $breakpoints: (
 );
 
 $default_color: #fff;
+$mono:#393939;
 $black_thin: #333;
 $gray: #ccc;
+$dimgray: #696969;
+$slate_gray: #626063;
 
 @mixin breakpoint($size) {
 	$flg: false;

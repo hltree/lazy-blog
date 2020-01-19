@@ -1,3 +1,15 @@
 .p-post-content {
     width: 100%;
+    &-area {
+        background: $slate_gray;
+        margin-top: 60px;
+        padding: 20px;
+    }
+    &-date {
+        margin-top: 10px;
+        @include fz(14);
+    }
+    &-title {
+        @include fz(24);
+    }
 }
