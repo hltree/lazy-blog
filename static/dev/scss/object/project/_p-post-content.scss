@@ -4,7 +4,7 @@
         background: $slate_gray;
         margin-top: 60px;
         padding: 20px;
-        @include fz(14);
+        @include fz(16);
 
         * {
             margin-top: 10px;
@@ -13,6 +13,9 @@
             background: $navy;
             padding: 20px;
             overflow-x: scroll;
+            code {
+                @include fz(14);
+            }
         }
     }
     &-date {
