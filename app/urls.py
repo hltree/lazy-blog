@@ -20,6 +20,7 @@ from django.urls import include, path
 import manager.views as manager_view
 
 urlpatterns = [
+    # adminの第一引数を変更することで管理画面のURLを変更することができる。デプロイ時に変更は必須。
     path('admin/', admin.site.urls),
     path('', manager_view.index.as_view(), name='index'),
     path('about', manager_view.about.as_view(), name='about'),
