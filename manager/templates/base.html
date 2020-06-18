@@ -4,20 +4,51 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This site is hltree the blog.">
+    <meta name="description" content="This site is hltree the blog...">
     <meta name="author" content="hltree">
+    {% load custom_markdownx %}
+    {% if post.title %}
+        <meta property="og:title" content="{{ post.title }}"/>
+    {% else %}
+        <meta property="og:title" content="TreeLib"/>
+    {% endif %}
+    <meta property="og:type" content="website"/>
+    {% if post.id %}
+        <meta property="og:url" content="https://hltree.tech/post/{{ post.id }}"/>
+    {% else %}
+        <meta property="og:url" content="https://hltree.tech"/>
+    {% endif %}
+    {% if post.image %}
+        <meta property="og:image" content="{{ post.image }}"/>
+    {% else %}
+        <meta property="og:image" content=""/>
+    {% endif %}
+    <meta property="og:site_name" content="https://hltree.tech"/>
+    {% if post.content %}
+        <meta property="og:description" content="{{post.content | markdown_to_html_with_escape}}"/>
+    {% else %}
+        <meta property="og:description" content="This is hltree's technical blog."/>
+    {% endif %}
+    {% if post.title %}
+        <title>{{ post.title }} | TreeLib</title>
+    {% else %}
+        <title>TreeLib</title>
+    {% endif %}
     {% load static %}
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
     <link rel="stylesheet" href="{% static 'build/css/style.css' %}">
-    <title>TreeLib</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154600294-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-154600294-1');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-154600294-1');
     </script>
 </head>
 <body>

@@ -10,10 +10,14 @@
             margin-top: 10px;
         }
         pre {
+            font-family: monospace, monospace;
+            _font-family: 'courier new', monospace;
             background: $navy;
             padding: 20px;
             overflow-x: scroll;
             code {
+                font-family: monospace, monospace;
+                _font-family: 'courier new', monospace;
                 @include fz(14);
             }
         }
