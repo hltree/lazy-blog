@@ -40,3 +40,11 @@ a {
         color: $default_color;
     }
 }
+
+/*
+ * https://fonts.google.com/specimen/Parisienne?preview.text=Tree+Lib&preview.text_type=custom&selection.family=Parisienne&sidebar.open#standard-styles
+ */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+.font-parisienne {
+    font-family: 'Parisienne', cursive;
+}

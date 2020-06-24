@@ -7,6 +7,7 @@
     <meta name="description" content="This site is hltree the blog...">
     <meta name="author" content="hltree">
     {% load custom_markdownx %}
+    {% load static %}
     {% if post.title %}
         <meta property="og:title" content="{{ post.title }}"/>
     {% else %}
@@ -21,7 +22,7 @@
     {% if post.image %}
         <meta property="og:image" content="{{ post.image }}"/>
     {% else %}
-        <meta property="og:image" content=""/>
+        <meta property="og:image" content="{% static 'images/logo.png' %}"/>
     {% endif %}
     <meta property="og:site_name" content="https://hltree.tech"/>
     {% if post.content %}
@@ -34,7 +35,6 @@
     {% else %}
         <title>TreeLib</title>
     {% endif %}
-    {% load static %}
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
     <link rel="stylesheet" href="{% static 'build/css/style.css' %}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -57,11 +57,13 @@
         <header class="l-globalHeader">
             <div class="l-globalHeader-inner">
                 <h1 class="l-globalHeaderTitle"><a href="/">TreeLib</a></h1>
+                <!--
                 <nav class="l-globalHeaderNav">
                     <ul class="l-globalHeaderList">
                         <li class="l-globalHeaderListItem"><a href="/about">About</a></li>
                     </ul>
                 </nav>
+                -->
             </div>
         </header>
     {% endblock %}
