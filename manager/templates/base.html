@@ -8,7 +8,7 @@
     <meta name="author" content="hltree">
     {% load custom_markdownx %}
     {% if post.title %}
-        <meta property="og:title" content="{{ post.title }}"/>
+        <meta property="og:title" content="{{ post.title | markdown_to_html_with_escape}}"/>
     {% else %}
         <meta property="og:title" content="TreeLib"/>
     {% endif %}
@@ -30,7 +30,7 @@
         <meta property="og:description" content="This is hltree's technical blog."/>
     {% endif %}
     {% if post.title %}
-        <title>{{ post.title }} | TreeLib</title>
+        <title>{{ post.title | markdown_to_html_with_escape}} | TreeLib</title>
     {% else %}
         <title>TreeLib</title>
     {% endif %}
