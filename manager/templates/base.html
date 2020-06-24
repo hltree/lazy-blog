@@ -8,7 +8,7 @@
     <meta name="author" content="hltree">
     {% load custom_markdownx %}
     {% if post.title %}
-        <meta property="og:title" content="{{ post.title | markdown_to_html_with_escape}}"/>
+        <meta property="og:title" content="{{ post.title }}"/>
     {% else %}
         <meta property="og:title" content="TreeLib"/>
     {% endif %}
@@ -25,12 +25,12 @@
     {% endif %}
     <meta property="og:site_name" content="https://hltree.tech"/>
     {% if post.content %}
-        <meta property="og:description" content="{{post.content | markdown_to_html_with_escape}}"/>
+        <meta property="og:description" content="{{ post.content | generate_post_description }}"/>
     {% else %}
         <meta property="og:description" content="This is hltree's technical blog."/>
     {% endif %}
     {% if post.title %}
-        <title>{{ post.title | markdown_to_html_with_escape}} | TreeLib</title>
+        <title>{{ post.title }} | TreeLib</title>
     {% else %}
         <title>TreeLib</title>
     {% endif %}

@@ -1,6 +1,8 @@
 from django import template
 from django.utils.safestring import mark_safe
 import markdown
+import html
+import re
 from markdownx.utils import markdownify
 from markdownx.settings import (
     MARKDOWNX_MARKDOWN_EXTENSIONS,
@@ -33,3 +35,10 @@ def markdown_to_html_with_escape(text):
     extensions = MARKDOWNX_MARKDOWN_EXTENSIONS + [EscapeHtml()]
     html = markdown.markdown(text, extensions=extensions, extension_configs=MARKDOWNX_MARKDOWN_EXTENSION_CONFIGS)
     return mark_safe(html)
+
+@register.filter
+def generate_post_description(text):
+    strip_text = re.sub('[\r\n]+$', '', text)
+    trim_text = strip_text[:100]
+    escape_html = html.escape(trim_text)
+    return escape_html
