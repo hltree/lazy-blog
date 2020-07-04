@@ -22,7 +22,7 @@
     {% if post.image %}
         <meta property="og:image" content="{{ post.image }}"/>
     {% else %}
-        <meta property="og:image" content="{% static 'images/logo.png' %}"/>
+        <meta property="og:image" content="https://hltree.tech{% static 'images/logo.jpg' %}"/>
     {% endif %}
     <meta property="og:site_name" content="https://hltree.tech"/>
     {% if post.content %}
