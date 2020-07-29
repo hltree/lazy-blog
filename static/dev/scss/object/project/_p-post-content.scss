@@ -1,32 +1,54 @@
 .p-post-content {
     width: 100%;
+
     &-area {
         background: $slate_gray;
-        margin-top: 60px;
+        margin-top: 20px;
         padding: 20px;
-        @include fz(16);
+        @include fz(14);
 
         * {
-            margin-top: 10px;
+            margin-top: 20px;
         }
+
+        a {
+            text-decoration: underline;
+            @include hover_action(map_get($breakpoints, 'tb')) {
+                text-decoration: none;
+            }
+        }
+
         pre {
             font-family: monospace, monospace;
             _font-family: 'courier new', monospace;
             background: $navy;
             padding: 20px;
             overflow-x: scroll;
+
             code {
                 font-family: monospace, monospace;
                 _font-family: 'courier new', monospace;
                 @include fz(14);
             }
         }
+
+        h3 {
+            border-bottom: 1px solid;
+            margin: 40px 0;
+            @include fz(22);
+        }
+
+        h4 {
+            @include fz(18);
+        }
     }
+
     &-date {
-        margin-top: 10px;
+        margin-top: 5px;
         @include fz(14);
     }
+
     &-title {
-        @include fz(20);
+        @include fz(24);
     }
 }

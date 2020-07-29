@@ -1,3 +1,23 @@
+/*
+ * https://fonts.google.com/specimen/Parisienne?preview.text=Tree+Lib&preview.text_type=custom&selection.family=Parisienne&sidebar.open#standard-styles
+ */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+.font-parisienne {
+    font-family: 'Parisienne', cursive;
+}
+
+/*
+ * https://fonts.google.com/specimen/Noto+Sans+JP?sidebar.open=true&selection.family=Noto+Sans+JP:wght@400;500;700
+ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+.font-noto {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.font-light {
+    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+}
+
 html {
     font-size: 100%;
 }
@@ -19,12 +39,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-kerning: normal;
-    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-    letter-spacing: .01em;
+    letter-spacing: .08em;
     padding: 0;
     position: relative;
+    @extend .font-noto;
     @include fz(16);
-    line-height: 30px;
+    line-height: 1.75;
     font-kerning: normal;
     margin: 0 auto;
     word-wrap: break-word;
@@ -39,12 +59,4 @@ a {
     &:hover, &:visited {
         color: $default_color;
     }
-}
-
-/*
- * https://fonts.google.com/specimen/Parisienne?preview.text=Tree+Lib&preview.text_type=custom&selection.family=Parisienne&sidebar.open#standard-styles
- */
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-.font-parisienne {
-    font-family: 'Parisienne', cursive;
 }
