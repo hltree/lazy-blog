@@ -6,6 +6,7 @@
     position: absolute;
     top: 0;
     width: 100%;
+    @extend .font-light;
 
     &:before {
         content: 'READ MORE';

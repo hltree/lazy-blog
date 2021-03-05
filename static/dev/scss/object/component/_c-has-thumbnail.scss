@@ -67,7 +67,7 @@
         &-date {
             color: $black_thin;
             display: block;
-            margin-top: 5px;
+            margin-top: 15px;
             position: relative;
             @include fz(12);
         }
@@ -82,14 +82,6 @@
                 &:after {
                     content: none;
                 }
-            }
-            &-img {
-            }
-            &-title {
-
-            }
-            &-date {
-
             }
         }
     }

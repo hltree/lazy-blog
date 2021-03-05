@@ -9,11 +9,6 @@
         * {
             margin-top: 10px;
         }
-        h3 {
-            border-bottom: 1px solid $gray;
-            margin: 40px 0;
-            @include fz(18);
-        }
         pre {
             background: $navy;
             padding: 20px;

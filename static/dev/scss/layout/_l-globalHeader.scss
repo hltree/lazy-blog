@@ -18,11 +18,16 @@
     &Nav {
     }
     &Title {
-        @include fz(24);
+        line-height: 1;
+        text-align: center;
+        @include fz(50);
+        @extend .font-parisienne;
         a {
             color: #333;
-            &:hover {
-                text-decoration: none;
+            text-decoration: none;
+            transition: opacity .5s;
+            @include hover_action(map_get($breakpoints, 'tb')) {
+                opacity: .6;
             }
         }
     }
