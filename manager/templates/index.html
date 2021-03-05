@@ -2,19 +2,12 @@
 {% block content %}
     <main class="l-area">
         <section class="l-area-inner">
-            <div class="c-has-thumbnail-items">
+            <div class="p-post-list">
                 {% for post in posts %}
-                <article class="c-has-thumbnail-item">
-                    <a href="{% url 'post_detail' post.id %}" class="c-has-thumbnail-item-inner">
-                        <span class="c-has-thumbnail-item-img">
-                            {% if post.image %}
-                                <img src='/{{post.image}}'>
-                            {% else %}
-                                <span class="c-readmoreText"></span>
-                            {% endif %}
-                        </span>
-                        <span class="c-has-thumbnail-item-title">{{post.title}}</span>
-                        <span class="c-has-thumbnail-item-date">{{post.published}}</span>
+                <article class="p-post-list-item">
+                    <a href="{% url 'post_detail' post.id %}" class="p-post-list-item-inner">
+                        <span class="p-post-list-item-date">{{post.published}}</span>
+                        <span class="p-post-list-item-title">{{post.title}}</span>
                     </a>
                 </article>
                 {% endfor %}

@@ -47,3 +47,13 @@ $ npm i && npm run build
 ```
 
 **仮想環境から出て行ってください**
+
+## Memo
+
+お役立ちメモ程度
+
+### DBの構造を変更する
+
+1. model.pyで構造を変更
+2. `python manage.py makemigrations` でモデル情報をマイグレーションファイルとして作成
+3. `python manage.py migrate` でマイグレート
