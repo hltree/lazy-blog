@@ -23,3 +23,27 @@ $ pipenv install
 ```
 $ pipenv run dev
 ```
+
+3. 仮想環境に入って、マイグレートする
+```
+$ pipenv shell
+$ python manage.py migrate
+```
+
+4. 管理者ユーザーを作成する
+
+```
+$ python manage.py createsuperuser
+```
+
+対話式でいくつか質問されるので、それに答える。
+（ユーザー名やパスワードなどを入力します）
+
+5. static環境をビルドする
+
+```
+$ cd ./static
+$ npm i && npm run build
+```
+
+**仮想環境から出て行ってください**
