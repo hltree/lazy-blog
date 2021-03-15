@@ -8,8 +8,35 @@
         & + & {
             margin-top: 20px;
         }
-        &-date, &-title {
-            display: block;
+        &-date {
+            margin-right: 10px;
+            min-width: 170px;
+        }
+        &-title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &-inner {
+            display: inline-flex;
+            text-decoration: none;
+            max-width: 100%;
+            position: relative;
+            &:after {
+                border-bottom: 1px solid;
+                bottom: 0;
+                content: "";
+                display: block;
+                height: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+            &:hover {
+                &:after {
+                    border-bottom: none;
+                }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@
         pre {
             background: $navy;
             padding: 20px;
-            overflow-x: scroll;
+            overflow-x: auto;
             code {
                 @include fz(14);
             }
