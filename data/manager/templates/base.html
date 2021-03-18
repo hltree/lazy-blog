@@ -19,11 +19,7 @@
     {% else %}
         <meta property="og:url" content="https://hltree.tech"/>
     {% endif %}
-    {% if post.image %}
-        <meta property="og:image" content="{{ post.image }}"/>
-    {% else %}
-        <meta property="og:image" content="https://hltree.tech{% static 'images/logo.jpg' %}"/>
-    {% endif %}
+    <meta property="og:image" content="https://hltree.tech{% static 'images/logo.jpg' %}"/>
     <meta property="og:site_name" content="https://hltree.tech"/>
     {% if post.content %}
         <meta property="og:description" content="{{ post.content | generate_post_description }}"/>
@@ -71,5 +67,6 @@
     {% endblock %}
     <a href="#top" class="c-totop" id="totop"></a>
 </div>
+<script src="{% static 'build/js/main.min.js' %}"></script>
 </body>
 </html>

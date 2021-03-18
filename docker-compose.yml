@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  web:
+    container_name: mysite_django_web
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./data:/usr/src/app/
+    env_file:
+      - ./docker/web/.env
+    links:
+      - db
+  db:
+    container_name: mysite_django_db
+    image: mysql:5.7
+    ports:
+    - 3306:3306
+    restart: always
+    volumes:
+      - ./docker/db/data/mysql:/var/lib/mysql
+      - ./docker/db/data/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/data/sql:/docker-entrypoint-initdb.d
+    env_file:
+      - ./docker/db/.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - TZ='Asia/Tokyo'
