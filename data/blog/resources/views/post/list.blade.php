@@ -2,9 +2,10 @@
 @section('content')
     <div class="posts">
         <div class="card">
-            <div class="page-title card-body text-center">
-                <h4 class="card-title m-b-0">Posts</h4>
-            </div>
+{{--            タイトル必要ならコメントアウト解除--}}
+{{--            <div class="page-title card-body text-center">--}}
+{{--                <h4 class="card-title m-b-0">Posts</h4>--}}
+{{--            </div>--}}
             <ul class="list-style-none">
                 @foreach($posts as $post)
                     <li class="d-flex no-block card-body">
