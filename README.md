@@ -1,49 +1,46 @@
-# MySite
+# Apache
 
-## About
-
-This is Mysite Project
-
-## Requirements
-
-Python v3.7.4
-<br />
-Pipenv v2018.11.26
-<br />
-Other.. look at Pipfile.lock
+Using php with apache.
 
 ## Usage
 
-1. pipenvを初期化
+1. data内にコンテンツを配置する
+
+2. .envファイルをコピーする
 ```
-$ pipenv install
+コピー先で設定は自由に変えて頂いて構いません。
+$ cp .env-sample .env
 ```
 
-2. pipenvで仮想環境を立ち上げる
+3. dockerを起動する
 ```
-$ pipenv run dev
+起動
+$ docker-compose up -d
+（初回はビルドが入るため、時間がかかります）
+
+終了
+$ docker-compose down
 ```
 
-3. 仮想環境に入って、マイグレートする
-```
-$ pipenv shell
-$ python manage.py migrate
-```
+## Settings
 
-4. 管理者ユーザーを作成する
+### ・Portを変更する
+1. [docker-compose.yml](./docker-compose.yml)を開く
+2. 変更したいコンテナのportsを書き換える
+3. （docker動作中なら）コンテナを再起動する
 
+### ・PHP My Adminのインポートサイズを変更する
+1. [upload.ini](./docker/phpmyadmin/upload.ini)を開く
+2. 設定値を変更する
 ```
-$ python manage.py createsuperuser
-```
+例
 
-対話式でいくつか質問されるので、それに答える。
-（ユーザー名やパスワードなどを入力します）
-
-5. static環境をビルドする
-
-```
-$ cd ./static
-$ npm i && npm run build
+upload_max_filesize=128M
 ```
 
-**仮想環境から出て行ってください**
+## Available by default
+
+- PHP
+- MySQL
+- PHP My Admin
+- MailHog
