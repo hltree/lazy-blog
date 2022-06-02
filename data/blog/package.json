@@ -24,6 +24,13 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "react-markdown": "^8.0.3"
+        "prop-types": "^15.8.1",
+        "react-markdown": "^8.0.3",
+        "rehype-highlight": "^5.0.2",
+        "rehype-raw": "^6.1.1",
+        "remark-gfm": "^3.0.1",
+        "remark-slug": "^7.0.1",
+        "remark-toc": "^8.0.1",
+        "sweetalert2": "^11.4.17"
     }
 }
