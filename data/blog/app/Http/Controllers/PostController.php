@@ -61,7 +61,7 @@ class PostController extends Controller
 
     public function list()
     {
-        $posts = DB::table('posts')->paginate(1);
+        $posts = DB::table('posts')->paginate(30);
         return view('post.list', [
             'posts' => $posts
         ]);
