@@ -212,4 +212,14 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Login Control
+    |--------------------------------------------------------------------------
+    |
+    | envに設定されたキーを入力することで
+    | ルートの値を変更する。初期値はadmin
+    */
+    'login_key' => env('LOGIN_KEY', 'admin'),
+    'show_login_form' => env('SHOW_LOGIN_FORM', false)
 ];

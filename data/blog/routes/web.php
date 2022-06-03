@@ -13,19 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\PostController@list')->name('welcome');
 
+/**
+ * /login -> login page
+ */
 Auth::routes([
     'register' => false,
     'reset' => false,
-    'verify' => false
+    'verify' => false,
+    'login' => false,
+    'confirm' => false
 ]);
+
+/**
+ * Customize auth
+ */
+Route::get('login/{key}', 'App\Http\Controllers\AuthController@showLoginForm')->name('showLoginForm');
+Route::post('login/{key}', 'App\Http\Controllers\AuthController@login')->name('login');
+Route::get('password/confirm/{key}', 'App\Http\Controllers\AuthController@showConfirmForm')->name('password.confirm');
+Route::post('password/confirm/{key}', 'App\Http\Controllers\AuthController@confirm');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'post', 'as' => 'post.'], function () {
-    Route::get('/', 'App\Http\Controllers\PostController@index')->name('index');
+    Route::get('/', 'App\Http\Controllers\PostController@list')->name('index');
     Route::get('create', 'App\Http\Controllers\PostController@newPost')->name('newPost');
     Route::post('create', 'App\Http\Controllers\PostController@create')->name('create');
     Route::get('show/{id}', 'App\Http\Controllers\PostController@show')->name('show');

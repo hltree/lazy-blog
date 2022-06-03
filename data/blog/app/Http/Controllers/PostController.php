@@ -11,11 +11,6 @@ use Illuminate\Validation\ValidationException;
 
 class PostController extends Controller
 {
-    public function index()
-    {
-
-    }
-
     public function create(Request $request): JsonResponse
     {
         $Validator = $this->validator($request->all());
