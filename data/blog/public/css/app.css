@@ -11459,3 +11459,17 @@ main {
   display: flex;
   justify-content: center;
 }
+
+/**
+ * 投稿のナビゲーションバー
+ */
+.post-control {
+  box-shadow: 0 0.2rem 1rem rgba(211, 84, 0, 0.3);
+  bottom: 0;
+  position: fixed;
+  width: calc(100% - 260px);
+  right: 0;
+}
+.post-control .nav-item + .nav-item {
+  margin-left: 20px;
+}

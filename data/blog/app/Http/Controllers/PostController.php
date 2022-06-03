@@ -69,6 +69,7 @@ class PostController extends Controller
         $takeOne = $wherePost->get()[0];
 
         return view('post.edit', [
+            'id' => $id,
             'actionRoute' => route('post.update', [
                 'id' => $id
             ]),
@@ -102,6 +103,30 @@ class PostController extends Controller
 
             DB::commit();
         } catch (\Exception $Exception) {
+            DB::rollBack();
+        }
+
+        return $response;
+    }
+
+    public function delete(string $id, Request $request): JsonResponse
+    {
+        DB::beginTransaction();
+        try {
+            $Post = Post::where('id', (int)$id);
+            if (!$Post->exists()) throw new \Exception();
+            $Post->delete();
+
+            $response = new JsonResponse([
+                'id' => $id,
+                'url' => route('post.list')
+            ], 200);
+
+            DB::commit();
+        } catch (\Exception $Exception) {
+            $response = new JsonResponse([
+                'errors' => __('予期せぬエラーが発生しました')
+            ], 200);
             DB::rollBack();
         }
 

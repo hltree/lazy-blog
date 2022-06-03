@@ -71,4 +71,5 @@
             }
         })
     </script>
+    @include('partials.post-control', ['id' => $id])
 @endsection
