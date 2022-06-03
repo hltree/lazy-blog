@@ -71,5 +71,7 @@
             }
         })
     </script>
-    @include('partials.post-control', ['id' => $id])
+    @if ('post.newPost' !== Route::currentRouteName())
+        @include('partials.post-control', ['id' => $id])
+    @endif
 @endsection
