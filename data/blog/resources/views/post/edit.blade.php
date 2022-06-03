@@ -1,9 +1,21 @@
 @extends('layouts.app')
 @section('content')
-    <input name="post_title" class="post_title-input" id="post_title" placeholder="タイトルを入力セイ" type="text" />
+    <textarea name="hidden" class="hidden-tx-area">{{ !isset($post_content) ? '' : $post_content }}</textarea>
+    <input name="post_title" class="post_title-input" id="post_title" placeholder="タイトルを入力セイ" type="text" value="{{ !isset($post_title) ? '' : $post_title }}" />
     <div id="editor"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const postContent = document.querySelector('.hidden-tx-area')
+            if (postContent) {
+                if (postContent.value) {
+                    const postContentTextArea = document.querySelector('[name="post_content"]')
+                    postContentTextArea.value = postContent.value
+                    postContentTextArea._valueTracker.setValue('')
+                    const event = new Event('change', {'bubbles': true})
+                    postContentTextArea.dispatchEvent(event)
+                }
+            }
+
             const submit = document.getElementById('form-md-editor-submit')
 
             if (submit) {
@@ -52,7 +64,7 @@
 
                                     window.location.assign(json.url)
                                 }
-                            })
+                           })
                         }
                     })
                 })

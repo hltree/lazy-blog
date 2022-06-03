@@ -8,13 +8,15 @@
 {{--            </div>--}}
             <ul class="list-style-none">
                 @foreach($posts as $post)
-                    <li class="d-flex no-block card-body">
+                    <li class="d-flex no-block card-body @auth enable-edit-button @endauth">
                         <a href="{{ route('post.show', ['id' => $post->id]) }}">
                             <div>
                                 <div class="time">{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('Y.m.d') }}</div>
                                 <div class="m-b-0 font-medium p-0">{{ $post->title }}</div>
                             </div>
                         </a>
+
+                        <a class="btn btn-primary" href="{{ route('post.edit', ['id' => $post->id]) }}">{{ __('Edit') }}</a>
                     </li>
                 @endforeach
             </ul>

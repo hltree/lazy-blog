@@ -41,4 +41,6 @@ Route::group(['prefix' => 'post', 'as' => 'post.', 'middleware' => 'auth'], func
     Route::post('create', 'App\Http\Controllers\PostController@create')->name('create');
     Route::get('show/{id}', 'App\Http\Controllers\PostController@show')->name('show');
     Route::get('s', 'App\Http\Controllers\PostController@list')->name('list');
+    Route::get('edit/{id}', 'App\Http\Controllers\PostController@edit')->name('edit');
+    Route::post('{id}', 'App\Http\Controllers\PostController@update')->name('update');
 });

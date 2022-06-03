@@ -11286,6 +11286,17 @@ body {
   min-width: 1080px;
 }
 
+.hidden-tx-area {
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  font-size: 0;
+  text-indent: 0;
+  border: 0;
+}
+
 #editor {
   width: 100%;
 }
@@ -11420,6 +11431,7 @@ main {
 .posts li.card-body {
   border-bottom: 1px solid #ccc;
   padding: 0;
+  position: relative;
   transition: opacity 0.5s, background 0.5s;
 }
 .posts li.card-body:hover {
@@ -11431,6 +11443,17 @@ main {
   display: block;
   padding: 1rem 1rem;
   width: 100%;
+}
+.posts li.card-body a.btn {
+  align-items: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  right: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
 }
 .posts .area-pagination {
   display: flex;

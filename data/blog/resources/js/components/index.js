@@ -7,7 +7,6 @@ import rehypeHighlight from 'rehype-highlight'
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import {CodeMirrorEditor} from './Editor'
-import {func} from "prop-types";
 
 const initialTitle = ``
 const initialValue = ``
