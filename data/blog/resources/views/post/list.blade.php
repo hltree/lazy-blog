@@ -20,8 +20,10 @@
                             </div>
                         </a>
 
-                        <a class="btn btn-primary"
-                           href="{{ route('post.edit', ['id' => $post->id]) }}">{{ __('Edit') }}</a>
+                        @auth
+                            <a class="btn btn-primary"
+                               href="{{ route('post.edit', ['id' => $post->id]) }}">{{ __('Edit') }}</a>
+                        @endauth
                     </li>
                 @endforeach
             </ul>
