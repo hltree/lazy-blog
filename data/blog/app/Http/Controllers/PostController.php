@@ -49,6 +49,9 @@ class PostController extends Controller
 
     public function show(string $id)
     {
+        $Post = Post::where('id', (int)$id);
+        if (!$Post->exists()) abort(404);
+
         return view('post.show', [
             'id' => $id
         ]);
