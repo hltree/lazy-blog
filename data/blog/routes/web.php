@@ -35,13 +35,13 @@ Route::get('password/confirm/{key}', 'App\Http\Controllers\AuthController@showCo
 Route::post('password/confirm/{key}', 'App\Http\Controllers\AuthController@confirm');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::group(['prefix' => 'post', 'as' => 'post.', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'post', 'as' => 'post.'], function () {
     Route::get('/', 'App\Http\Controllers\PostController@list')->name('index');
-    Route::get('create', 'App\Http\Controllers\PostController@newPost')->name('newPost');
-    Route::post('create', 'App\Http\Controllers\PostController@create')->name('create');
+    Route::get('create', 'App\Http\Controllers\PostController@newPost')->name('newPost')->middleware('auth');
+    Route::post('create', 'App\Http\Controllers\PostController@create')->name('create')->middleware('auth');
     Route::get('show/{id}', 'App\Http\Controllers\PostController@show')->name('show');
     Route::get('s', 'App\Http\Controllers\PostController@list')->name('list');
-    Route::get('edit/{id}', 'App\Http\Controllers\PostController@edit')->name('edit');
-    Route::post('{id}', 'App\Http\Controllers\PostController@update')->name('update');
-    Route::delete('{id}', 'App\Http\Controllers\PostController@delete')->name('delete');
+    Route::get('edit/{id}', 'App\Http\Controllers\PostController@edit')->name('edit')->middleware('auth');
+    Route::post('{id}', 'App\Http\Controllers\PostController@update')->name('update')->middleware('auth');
+    Route::delete('{id}', 'App\Http\Controllers\PostController@delete')->name('delete')->middleware('auth');
 });
